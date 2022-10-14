@@ -7,4 +7,4 @@
 3. Медиа запросы
 4. Организация файлов по БЭМ
 
-Ссылка на проект:
+Ссылка на проект:https://nolikof.github.io/mesto-project-bootcamp/
