@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
+    <title>Mesto</title>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="images/logoWhite.svg"
+        alt="Логотип Mesto"
+      />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__info">
+          <img
+            class="profile__image"
+            src="images/kusto.jpg"
+            alt="фото профиля"
+          />
+          <div class="profile__name">
+            <div class="profile__name-info">
+              <h1 class="profile__full-name">Жак-Ив Кусто</h1>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="редактировать"
+              ></button>
+            </div>
+            <p class="profile__about">Исследователь океана</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="profile__add-button"
+          aria-label="добавить профиль"
+        ></button>
+      </section>
+
+      <section class="elements">
+        <div class="elements__item">
+          <img
+            class="elements__image"
+            src="images/kirill-pershin-1088404-unsplash.jpg"
+            alt="Карачаевск"
+          />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Карачаевск</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img
+            class="elements__image"
+            src="images/kirill-pershin-1404681-unsplash.png"
+            alt="Гора Эльбрус"
+          />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img
+            class="elements__image"
+            src="images/kirill-pershin-1556355-unsplash.png"
+            alt="Домбай"
+          />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Домбай</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="images/moscow.jpg" alt="Москва" />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Москва</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="images/obaikal.jpg" alt="Байкал" />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Байкал</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img
+            class="elements__image"
+            src="images/troikoe.jpg"
+            alt="фото не загрузилось, возможно не верная ссылка"
+          />
+          <div class="elements__item-bottom">
+            <h2 class="elements__title">Троицкое</h2>
+            <button
+              type="button"
+              class="elements__heart"
+              aria-label="нравится"
+            ></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">&COPY; 2022 Новиков Кирилл</p>
+    </footer>
+
+    <div class="popup popup_profile">
+      <div class="popup__content">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="закрыть"
+        ></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="main">
+          <input
+            type="text"
+            class="popup__input"
+            name="name"
+            placeholder="Жак-Ив Кусто"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="about"
+            placeholder="Исследователь океана"
+          />
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
