@@ -21,7 +21,7 @@
 @import url(../blocks/elements/__basket/elements__basket.css);
 @import url(../blocks/profile/__full-name/profile__full-name.css);
 @import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);

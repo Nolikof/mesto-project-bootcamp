@@ -1,16 +1,20 @@
 .elements__heart {
+  padding: 0;
   background-image: url(../../../images/heart.svg);
-  min-width: 26px;
+  min-width: 22px;
   background-repeat: no-repeat;
-  height: 22px;
+  min-height: 19px;
   border: none;
   background-color: transparent;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: -1px;
 }
 
 @media screen and (max-width: 767px) {
   .elements__heart {
     margin-top: 4px;
-    min-width: 28px;
+    min-width: 22px;
   }
 }
 
