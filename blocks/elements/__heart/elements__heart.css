@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 767px) {
   .elements__heart {
-    margin-top: 4px;
+    margin-top: 5px;
     min-width: 22px;
   }
 }
