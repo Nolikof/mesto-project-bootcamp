@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
+    <title>Mesto</title>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="images/logoWhite.svg"
+        alt="Логотип Mesto"
+      />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__info">
+          <img
+            class="profile__image"
+            src="images/kusto.jpg"
+            alt="фото профиля"
+          />
+          <div class="profile__name">
+            <div class="profile__name-info">
+              <h1 class="profile__full-name">Жак-Ив Кусто</h1>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="редактировать"
+              ></button>
+            </div>
+            <p class="profile__about">Исследователь океана</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="profile__add-button"
+          aria-label="добавить профиль"
+        ></button>
+      </section>
+
+      <section class="elements"></section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&COPY; 2022 Новиков Кирилл</p>
+    </footer>
+
+    <!-- popup редактирования профиля -->
+    <div class="popup popup_type_profile">
+      <div class="popup__content">
+        <button
+          type="button"
+          class="popup__close-button popup__close-button_type_profile"
+          aria-label="закрыть"
+        ></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form" name="main">
+          <input
+            type="text"
+            class="popup__input_value_name popup__input"
+            name="name"
+          />
+          <span class="eorghfejrhgsdfjg_name_error"></span>
+          <input
+            type="text"
+            class="popup__input_value_about popup__input"
+            name="about"
+          />
+          <span class="eorghfejrhgsdfjg_about_error"></span>
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup добавления карточки(места) -->
+    <div class="popup popup_type_new-place">
+      <div class="popup__content">
+        <button
+          type="button"
+          class="popup__close-button popup__close-button_type_newplace"
+          aria-label="закрыть"
+        ></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form-newplace" name="main">
+          <input
+            type="text"
+            class="popup__input_value_place popup__input"
+            name="place"
+            placeholder="Название"
+          />
+          <input
+            type="text"
+            class="popup__input_value_src popup__input"
+            name="link"
+            placeholder="Ссылка на картинку"
+          />
+          <button type="submit" class="popup__save-button">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup открытия изображения -->
+    <div class="popup popup_type_image">
+      <div class="popup__image-content">
+        <button
+          type="button"
+          class="popup__close-button popup__close-button_image_close"
+        ></button>
+        <img
+          class="popup__image"
+          src="images/kirill-pershin-1088404-unsplash.jpg"
+          alt="Неверная ссылка на фото"
+        />
+        <p class="popup__image-text"></p>
+      </div>
+    </div>
+
+    <!-- шаблон карточки (места) -->
+    <template class="template">
+      <div class="elements__item">
+        <button
+          type="button"
+          class="elements__basket"
+          aria-label="удалить"
+        ></button>
+        <img
+          class="elements__image"
+          src="image/kirill-pershin-1088404-unsplash.jpg"
+          alt="Неверная ссылка на фото"
+        />
+        <div class="elements__item-bottom">
+          <h2 class="elements__title">Темплейт</h2>
+          <button
+            type="button"
+            class="elements__heart"
+            aria-label="нравится"
+          ></button>
+        </div>
+      </div>
+    </template>
+
+    <script src="script/index.js"></script>
+  </body>
+</html>
