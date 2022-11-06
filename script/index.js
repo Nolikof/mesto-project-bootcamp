@@ -27,6 +27,8 @@ const itemTemplateCard = itemTemplate
   .querySelector(".elements__item")
   .cloneNode(true);
 const newBasket = itemTemplateCard.querySelector(".elements__basket");
+const errorTextName = document.querySelector(".eorghfejrhgsdfjg_name_error");
+const popups = document.querySelectorAll(".popup");
 
 const initialCards = [
   {
@@ -80,12 +82,12 @@ function createCardElement(name, link) {
     buttonHeart.classList.toggle("elements__heart_active");
   });
   elementsImage.addEventListener("click", function () {
-    popupImage.classList.add("popup_opened");
+    openPopup(popupImage);
     document.querySelector(".popup__image").src = link;
     document.querySelector(".popup__image").alt = name;
     document.querySelector(".popup__image-text").textContent = name;
   });
-  basket.addEventListener("click", function (evt) {
+  basket.addEventListener("click", function () {
     itemTemplateCardNew.remove();
   });
   elementsImage.src = link;
@@ -108,25 +110,69 @@ function addPlace(evt) {
 
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
+  window.addEventListener("keydown", closePopupOnKeyDownEscape);
+}
+
+function closePopupOnKeyDownEscape(event) {
+  const openedPopup = document.querySelector(".popup_opened");
+  console.log(event.key, openedPopup);
+  if (event.key === "Escape" && openedPopup) {
+    console.log(openedPopup);
+    window.removeEventListener("keydown", closePopupOnKeyDownEscape);
+    closePopup(openedPopup);
+  }
 }
 
 function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
 }
 
+function validateForm(form, fields, config) {
+  fields.forEach((field) => {
+    field.addEventListener("keyup", (event) => {
+      const value = event.target.value;
+
+      if (config.isRequired && !value) {
+        errorText.textContent = "Вы пропустили это поле";
+      } else if (value.length > config.min && value.length < config.max) {
+        console.log("Поле подходит под условие");
+      } else {
+        console.log("Поле не валидно");
+      }
+    });
+  });
+}
+
+popups.forEach((popup) => {
+  popup.addEventListener("click", (event) => {
+    closePopup(event.target);
+  });
+});
+
 popupCloseButtonImage.addEventListener("click", function () {
   closePopup(popupImage);
 });
 
-addCardButton.addEventListener("click", function () {
-  openPopup(popupNewPlace);
-});
+addCardButton.addEventListener("click", () => openPopup(popupNewPlace));
 
 profileEditButton.addEventListener("click", function () {
   openPopup(popupProfile);
   nameInput.value = profileName.textContent;
   aboutInput.value = about.textContent;
+  nameInput.addEventListener("keyup", (event) => {
+    const value = event.target.value;
+
+    if (!value) {
+      errorText.textContent = "Вы пропустили это поле";
+    } else if (value.length > 2 && value.length < 10) {
+      console.log("Поле подходит под условие");
+    } else {
+      console.log("Поле не валидно");
+    }
+  });
 });
+
+formElementNewPlace.addEventListener("change", (event) => {});
 
 popupCloseButtonProfile.addEventListener("click", function () {
   closePopup(popupProfile);
